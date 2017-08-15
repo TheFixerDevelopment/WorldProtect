@@ -49,17 +49,17 @@ class WpPvpMgr extends BaseWp implements Listener {
 		switch (substr(strtolower($args[0]),0,2)) {
 			case "sp":
 				$this->owner->setCfg($world,"pvp","spawn-off");
-				$this->owner->getServer()->broadcastMessage(TextFormat::YELLOW.mc::_("[WP] NO PvP in %1%'s spawn",$world));
+				$this->owner->getServer()->broadcastMessage(TextFormat::YELLOW.mc::_("[WP] PvP has been disabled in %1%'s spawn",$world));
 				break;
 			case "on":
 			case "tr":
 				$this->owner->unsetCfg($world,"pvp");
-				$this->owner->getServer()->broadcastMessage(TextFormat::RED.mc::_("[WP] PvP is allowed in %1%",$world));
+				$this->owner->getServer()->broadcastMessage(TextFormat::RED.mc::_("[WP] PvP is now enabled in %1%",$world));
 				break;
 			case "of":
 			case "fa":
 				$this->owner->setCfg($world,"pvp",false);
-				$this->owner->getServer()->broadcastMessage(TextFormat::GREEN.mc::_("[WP] NO PvP in %1%",$world));
+				$this->owner->getServer()->broadcastMessage(TextFormat::GREEN.mc::_("[WP] PvP has been disabled in %1%",$world));
 				break;
 			default:
 				return false;
@@ -79,7 +79,7 @@ class WpPvpMgr extends BaseWp implements Listener {
 			$dist = $sp->distance($pl);
 			if ($dist > $this->owner->getServer()->getSpawnRadius()) return;
 		}
-		$this->owner->msg($ev->getDamager(),mc::_("You are not allowed to do that here"));
+		$this->owner->msg($ev->getDamager(),mc::_("§cPvP is disabled here!"));
 		$ev->setCancelled();
 	}
 }
