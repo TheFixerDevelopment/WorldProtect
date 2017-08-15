@@ -202,7 +202,7 @@ class Main extends BasicPlugin implements CommandExecutor,Listener {
 	// Command dispatcher
 	//
 	//////////////////////////////////////////////////////////////////////
-	public function onCommand(CommandSender $sender, Command $label, array $args) {
+	public function onCommand(CommandSender $sender, Command $cmd $label, array $args) {
 		if ($cmd->getName() != "worldprotect") return false;
 		if ($sender instanceof Player) {
 			$world = $sender->getLevel()->getName();
