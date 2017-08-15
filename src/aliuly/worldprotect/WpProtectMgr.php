@@ -135,7 +135,7 @@ class WpProtectMgr extends BaseWp implements Listener {
 		if ($ev->isCancelled()) return;
 		$pl = $ev->getPlayer();
 		if ($this->checkBlockPlaceBreak($pl)) return;
-		$this->owner->msg($pl,mc::_("You are not allowed to do that here"));
+		$this->owner->msg($pl,mc::_("§cYou're not allowed to place/break blocks!"));
 		$ev->setCancelled();
 	}
 
@@ -143,7 +143,7 @@ class WpProtectMgr extends BaseWp implements Listener {
 		if ($ev->isCancelled()) return;
 		$pl = $ev->getPlayer();
 		if ($this->checkBlockPlaceBreak($pl)) return;
-		$this->owner->msg($pl,mc::_("You are not allowed to do that here"));
+		$this->owner->msg($pl,mc::_("§cYou're not allowed to place/break blocks!"));
 		$ev->setCancelled();
 	}
 }
